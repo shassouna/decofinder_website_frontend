@@ -7,14 +7,14 @@ const Home = (props) => {
         <div>
             {     
                 props.superunivers.data.map(val=>(
+                    console.log(val),
                     <div key={val['id']}>
                         <Link href={{pathname: `/superunivers/${val['attributes']['slug']}`}}>
                           <a key={val['id']}>Name : {val['attributes']['LIB']}</a>
                         </Link>
                     </div>         
                 ))
-            }
-            
+            }   
         </div>
     )
 }
