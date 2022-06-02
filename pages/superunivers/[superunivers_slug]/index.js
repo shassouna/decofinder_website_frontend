@@ -8,7 +8,7 @@ const SuperuniversSlug = (props) => {
                 Les Univers Arts De La Table :
                 {  
                     props.rayons.map(val=>{
-                        return //<Link href={{pathname: `/univers/${val['attributes']['slug']}`}}><p key={val['rayon'][0]['id']}>{val['rayon'][0]['attributes']['LIB']}</p></Link>
+                        return <Link href={{pathname: `/univers/${val['rayon'][0]['attributes']['slug']}`}}><p key={val['rayon'][0]['id']}>{val['rayon'][0]['attributes']['LIB']}</p></Link>
                     })
                 }
                 Les catégories :
