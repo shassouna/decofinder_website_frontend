@@ -28,9 +28,9 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps(context) {
-    console.log(context.params.univers_slug)
+
     const res = await axios.get(`http://localhost:1337/api/rayondetails/${context.params.univers_slug}`)
-    console.log(res.data)
+
     return {
         props: {
             univers : res.data.data

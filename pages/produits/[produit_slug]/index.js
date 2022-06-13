@@ -58,13 +58,13 @@ export default ProduitSlug
 
 export async function getStaticPaths() {
 
-    const res = await axios.get(`http://localhost:1337/api/produits`)
+    //const res = await axios.get(`http://localhost:1337/api/produits`)
 
     const paths = []
-
-    res.data.data.forEach(val => {
+    /*res.data.data.forEach(val => {
         paths.push({params : {produit_slug : "val['attributes']['slug']"}})
-    })
+    })*/
+
     return {
         paths:paths,
         fallback : true

@@ -1,5 +1,6 @@
 import axios from 'axios'
 import Link from 'next/link'
+
 const SuperuniversSlug = (props) => {
     return (
         <div>

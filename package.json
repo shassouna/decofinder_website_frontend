@@ -9,11 +9,14 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@meilisearch/instant-meilisearch": "^0.7.1",
     "axios": "^0.27.2",
+    "meilisearch": "^0.25.1",
     "next": "12.1.6",
     "qs": "^6.10.3",
     "react": "18.1.0",
-    "react-dom": "18.1.0"
+    "react-dom": "18.1.0",
+    "react-instantsearch-dom": "^6.27.0"
   },
   "devDependencies": {
     "eslint": "8.16.0",
