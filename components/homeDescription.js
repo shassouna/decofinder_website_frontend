@@ -1,7 +1,7 @@
 
 const HomeDescription = () => {
     return (
-        <div>
+        <>
             <h3>Le salon en ligne de la décoration et de l’ameublement depuis 1994 !</h3>
             <p>Decofinder est conçu pour permettre aux acheteurs, particuliers comme professionnels, de trouver des produits, des entreprises et de la documentation. Pensé comme un outil de découverte ayant pour objectif de faciliter la recherche, il offre également aux entreprises de meilleurs canaux de diffusion et de vente pour leurs produits, tant en France qu’à l’étranger.</p>
             <br/>
@@ -30,7 +30,7 @@ const HomeDescription = () => {
             <p>Nous restons à votre écoute pour toute question que vous jugeriez utile.</p>
             <br/>
             <p>Bonne visite sur Decofinder.</p>
-        </div>
+        </>
     )
 }
 

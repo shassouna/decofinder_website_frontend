@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const CoupsDeCoeur = (props) => {
+const Promo = (props) => {
 
     return (
         props.selections.map(val=>(
@@ -15,7 +15,7 @@ const CoupsDeCoeur = (props) => {
     )
 }
 
-export default CoupsDeCoeur
+export default Promo
 
 export async function getStaticProps(context) {
     const qs = require('qs')
@@ -23,7 +23,7 @@ export async function getStaticProps(context) {
     const query = qs.stringify(
         {
             filters: {
-                coupdecoeur: { $eq: true } 
+                PROMOTION: { $eq: "1" } 
             }
         },
         {
@@ -66,3 +66,4 @@ export async function getStaticProps(context) {
         }
     }
 }
+

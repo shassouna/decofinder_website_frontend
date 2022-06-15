@@ -1,33 +1,60 @@
 import axios from 'axios'
 import Link from 'next/link'
+import Image from 'next/image'
 import HomeDescription from '../components/homeDescription'
+
 const Home = (props) => {
+
     return (
         <div>
             <div>
                 {
                 props.selections.map(val=>(
                     <div>
+                        <Image src="https://s1.decofinder.com/0/0/sel-home/vig/1226/1226881/Assiette-De-Presentation.jpg" 
+                        width={300} height={300} placeholder="none" alt={val['produit']['attributes']['TITRE_FR']}>
+                        </Image>
                         <p>EXPOSANT : {val['exposant']['attributes']['NOM']}</p>
                         <p>Type produit : {val['typeprod']['attributes']['LIB_FR']}</p>
                         <p>Nom Produit : {val['produit']['attributes']['TITRE_FR']}</p>
                         <p>Modeles : {val['produit']['attributes']['MODELES']}</p>
                         <p>Description produit : {val['produit']['attributes']['DESC_FR']}</p>
+                        <p>{val['produit']['attributes']['selection']&& 'selection jury'}</p>
+                        <p>{val['produit']['attributes']['coupdecoeur']&& 'coupdecoeur'}</p>
+                        <p>{val['produit']['attributes']['achatenligne']&& 'achatenligne'}</p>
+                        <p>{val['produit']['attributes']['asaisir']&& 'asaisir'}</p>
+                        <p>{val['produit']['attributes']['TARIF_PUB']} €</p>
                     </div>
                 ))
                 }
             </div>
             <div>
+                <Link href={{pathname: `/selections`}}><a>Toutes les séléctions du jury</a></Link>
+                <Link href={{pathname: `/coupdecoeur`}}><a>Tous les coups de coeur</a></Link>
+                <Link href={{pathname: `/achatsenligne`}}><a>Toutes les achats en ligne</a></Link>
+                <Link href={{pathname: `/promos`}}><a>Toutes les promotions</a></Link>
+            </div>
+            <div>
+                <h2>Tous les Mega Univers :</h2>
                 {
                 props.superunivers.map(val=>(
                     <div key={val['id']}>
                         <Link href={{pathname: `/superunivers/${val['attributes']['slug']}`}}>
-                          <a key={val['id']}>Name : {val['attributes']['LIB']}</a>
+                          <Image src="https://s3.decofinder.com/0/0/tgprom/vig/1457/1457253/Accessoires-De-Table.jpg" 
+                          width={300} height={300} placeholder="none" alt={val['attributes']['slug']}>
+                          </Image>
                         </Link>
-
+                        <Link href={{pathname: `/superunivers/${val['attributes']['slug']}`}}>                       
+                        <a key={val['id']}>{val['attributes']['LIB']}</a>
+                        </Link>
                     </div>         
                 ))
                 }
+            </div>
+            <div>
+            <Image src="https://s1.decofinder.com/0/0/bdpBanner/_bandeaux/100/100771/.jpg" 
+                width={900} height={270} placeholder="none" alt={''}>
+            </Image>
             </div>
             <div>
                 {
@@ -59,6 +86,28 @@ const Home = (props) => {
             </div>
             <div>
             <HomeDescription/>
+            </div>
+            <div>
+            <h2>Les Nouveautés</h2>
+            {
+                props.nouveautes.map(val=>(
+                    <div>
+                        <Image src="https://s1.decofinder.com/0/0/sel-home/vig/1226/1226881/Assiette-De-Presentation.jpg" 
+                        width={300} height={300} placeholder="none" alt={val['produit']['attributes']['TITRE_FR']}>
+                        </Image>
+                        <p>EXPOSANT : {val['exposant']['attributes']['NOM']}</p>
+                        <p>Type produit : {val['typeprod']['attributes']['LIB_FR']}</p>
+                        <p>Nom Produit : {val['produit']['attributes']['TITRE_FR']}</p>
+                        <p>Modeles : {val['produit']['attributes']['MODELES']}</p>
+                        <p>Description produit : {val['produit']['attributes']['DESC_FR']}</p>
+                        <p>{val['produit']['attributes']['selection']&& 'selection jury'}</p>
+                        <p>{val['produit']['attributes']['coupdecoeur']&& 'coupdecoeur'}</p>
+                        <p>{val['produit']['attributes']['achatenligne']&& 'achatenligne'}</p>
+                        <p>{val['produit']['attributes']['asaisir']&& 'asaisir'}</p>
+                        <p>{val['produit']['attributes']['TARIF_PUB']} €</p>
+                    </div>
+                ))
+                }
             </div>
         </div>
     )
@@ -112,12 +161,8 @@ export async function getStaticProps(context) {
             const query3 = qs.stringify(
                 {
                     filters : {
-                                $and: [
-                                    {
-                                        CLE_RAYON: { $eq: univers['attributes']['CLE_RAYON'] } 
-                                    },
-
-                                ]
+                                    
+                                CLE_RAYON: { $eq: univers['attributes']['CLE_RAYON'] }    
                             }
                 },
                 {
@@ -132,17 +177,21 @@ export async function getStaticProps(context) {
     const query3 = qs.stringify(
         {
             filters: {
-                selection: { $eq: true } 
+                $or: [
+                    {selection: { $eq: true }},
+                    {coupdecoeur: { $eq: true }},
+                    {achatenligne: { $eq: true }},     
+                    {asaisir: { $eq: true }}               
+                ]
             }
         },
         {
             encodeValuesOnly: true,
         }
         )
-    const res5 = await axios.get(`http://localhost:1337/api/produits?${query3}`) 
-
+    const res2 = await axios.get(`http://localhost:1337/api/produits?${query3}`)  
     const selections = []
-    for (let produit of res5.data.data) {
+    for (let produit of res2.data.data) {
         const query = qs.stringify (
             {
                 filters: {
@@ -169,12 +218,52 @@ export async function getStaticProps(context) {
         selections.push({produit : produit, typeprod : res2.data.data[0], exposant : res.data.data[0]})
     }
 
+    const query4 = qs.stringify(
+        {
+            filters: {
+                NOUVEAUTE : { $eq: "1" } 
+            }
+        },
+        {
+            encodeValuesOnly: true,
+        }
+        )
+        const res3 = await axios.get(`http://localhost:1337/api/produits?${query4}`) 
+        const nouveautes = []
+        for (let produit of res3.data.data) {
+            const query = qs.stringify (
+                {
+                    filters: {
+                        CLE_EXPOSANT: { $eq: produit['attributes']['CLE_EXPOSANT'] } 
+                    }
+                },
+                {
+                    encodeValuesOnly: true,
+                }
+            )   
+            const res = await axios.get(`http://localhost:1337/api/exposants?${query}`) 
+    
+            const query2 = qs.stringify (
+                {
+                    filters: {
+                        CLE_TYPE_PROD: { $eq: produit['attributes']['CLE_TYPE_PROD'] } 
+                    }
+                },
+                {
+                    encodeValuesOnly: true,
+                }
+            )  
+            const res2 = await axios.get(`http://localhost:1337/api/typeprods?${query2}`) 
+
+            nouveautes.push({produit : produit, typeprod : res2.data.data[0], exposant : res.data.data[0]})
+        }
     return {
       props: {
           superunivers : res.data.data,
           rayons_univers : rayons_superunivers,
           typeprods_univers : typeprods_univers,
-          selections : selections
+          selections : selections,
+          nouveautes : nouveautes
       }, 
     }
 }
