@@ -2,9 +2,31 @@ import axios from 'axios'
 import Link from 'next/link'
 import Image from 'next/image'
 import HomeDescription from '../../components/homeDescription'
-const Home = ({superuniversdetailss, nouveautes, selections}) => {
+const Home = ({superunivers_rayons, nouveautes, selections}) => {
     return (
     <>
+            <div>
+                {
+                    superunivers_rayons.map(superuniver_rayon=>{
+                        return(
+                        <div key={superuniver_rayon.superuniversdetails['id']}>
+                            <Link href={{pathname: `/superunivers/${superuniver_rayon.superuniversdetails['attributes']['slug']}`}}>
+                                <>
+                                    <h3 key={superuniver_rayon.superuniversdetails['id']}>{superuniver_rayon.superuniversdetails['attributes']['LIB']}</h3>
+                                    <div>
+                                        {
+                                            superuniver_rayon.rayondetails.map(rayon=>{
+                                                return <p>{rayon['attributes']['LIB']}</p>
+                                            })   
+                                        }
+                                    </div>
+                                </>
+                            </Link>
+                        </div>  
+                        )
+                    })
+                }
+            </div>
         <div>
             <h2>Les Selections</h2>
             {
@@ -27,18 +49,27 @@ const Home = ({superuniversdetailss, nouveautes, selections}) => {
                 }
         </div>
         <div>
+            <Link href={{pathname: `/selections`}}><a>Toutes les séléctions du jury</a></Link>
+            <br/>
+            <Link href={{pathname: `/coupdecoeur`}}><a>Tous les coups de coeur</a></Link>
+            <br/>
+            <Link href={{pathname: `/achatsenligne`}}><a>Toutes les achats en ligne</a></Link>
+            <br/>
+            <Link href={{pathname: `/promos`}}><a>Toutes les promotions</a></Link>
+        </div>
+        <div>
             <h2>Tous les Mega Univers :</h2>
             <div>
                 {
-                    superuniversdetailss.map(superuniversdetails=>{
+                    superunivers_rayons.map(superuniver_rayon=>{
                         return(
-                        <div key={superuniversdetails['id']}>
-                            <Link href={{pathname: `/superunivers/${superuniversdetails['attributes']['slug']}`}}>
+                        <div key={superuniver_rayon.superuniversdetails['id']}>
+                            <Link href={{pathname: `/superunivers/${superuniver_rayon.superuniversdetails['attributes']['slug']}`}}>
                               <>
                                 <Image src="https://s3.decofinder.com/0/0/tgprom/vig/1457/1457253/Accessoires-De-Table.jpg" 
-                                width={300} height={300} placeholder="none" alt={superuniversdetails['attributes']['slug']}>
+                                width={300} height={300} placeholder="none" alt={superuniver_rayon.superuniversdetails['attributes']['slug']}>
                                 </Image>
-                                <a key={superuniversdetails['id']}>{superuniversdetails['attributes']['LIB']}</a>
+                                <a key={superuniver_rayon.superuniversdetails['id']}>{superuniver_rayon.superuniversdetails['attributes']['LIB']}</a>
                               </>
                             </Link>
                         </div>  
@@ -84,8 +115,35 @@ export default Home
 
 export async function getStaticProps(context) {
     const qs =require('qs')
-    // superuniversdetailssCall
+    // superuniversdetailss
     const superuniversdetailssCall = await axios.get(`http://localhost:1337/api/superuniversdetailss`)
+
+    // universdetails
+    const superunivers_rayons = []
+    for (let superuniversdetails of superuniversdetailssCall.data.data) {
+        const queryRayonbases = qs.stringify(
+            {
+                filters: {
+                            CLE_SUPERUNIVERS: { $eq: superuniversdetails["attributes"]["CLE_SUPERUNIVERS"] } 
+                        }
+            }
+        ) 
+        const rayonbasesCall = await axios.get(`http://localhost:1337/api/rayonbases?${queryRayonbases}`)
+        const rayons_keys = []
+        for (let superunivers of rayonbasesCall.data.data) {
+            rayons_keys.push(superunivers['attributes']['CLE_RAYON'])
+        }
+        const queryRayondetails = qs.stringify(
+            {
+                filters: {
+                            CLE_RAYON : { $in : rayons_keys },
+                            CLE_LANG : { $eq : "0"}
+                        }
+            }
+        ) 
+        const rayondetailsCall = await axios.get(`http://localhost:1337/api/rayondetails?${queryRayondetails}`)   
+        superunivers_rayons.push({superuniversdetails : superuniversdetails, rayondetails : rayondetailsCall.data.data})
+    }
 
     // nouveautés 
     const queryNouveautes = qs.stringify(
@@ -132,7 +190,6 @@ export async function getStaticProps(context) {
         }
     )
     const selectionsCall = await axios.get(`http://localhost:1337/api/produits?${querySelections}`)
-    console.log(selectionsCall)
     const selections = []
     for (let produit of selectionsCall.data.data) {
         // exposants des nouveautés
@@ -160,7 +217,7 @@ export async function getStaticProps(context) {
 
     return {
         props: {
-            superuniversdetailss : superuniversdetailssCall.data.data,
+            superunivers_rayons : superunivers_rayons,
             selections : selections,
             nouveautes : nouveautes
         }, 
