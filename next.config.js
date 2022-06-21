@@ -2,7 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: ['s1.decofinder.com','s3.decofinder.com'],
+    domains: ['s1.decofinder.com','s3.decofinder.com', 's6.decofinder.com', 's5.decofinder.com'],
   },
 }
 

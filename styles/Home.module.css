@@ -218,7 +218,6 @@ text-align: left;
   color: #000000;
 }
 .megauniverswrapper {
-  width: 1300px;
   width: 100%;
   display: grid;
   grid-template-columns: repeat(auto-fill, 150px);
@@ -277,25 +276,25 @@ text-align: left;
 .container2 {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
   max-width: 1300px;
   width: 80%;
   height: auto;
   margin: 30px auto;
 }
 .container21 {
-  width: 50%;
+  width: 47%;
   height: auto;
-  background: #9999;
 }
 .container22 {
-  width: 50%;
-  height: 800px;
-  background: #6baf6b;
+  width: 47%;
+  height: auto;
 }
 .container21H2 {
-  width: 559px;
+  margin: 0;
   height: 71px;
-
+  margin-bottom: 21px;
   font-family: 'Roboto';
   font-style: normal;
   font-weight: 400;
@@ -305,8 +304,8 @@ text-align: left;
   color: #000000;
 }
 .container21P {
-  margin-top: 41px;
-
+  margin: 0;
+  margin-bottom: 21px;
   font-family: 'Roboto';
   font-style: normal;
   font-weight: 400;
@@ -317,8 +316,8 @@ text-align: left;
 }
 
 .container21P2 {
-  margin-top: 1px;
-
+  margin: 0;
+  margin-bottom: 21px;
   font-family: 'Roboto';
   font-style: normal;
   font-weight: 400;
@@ -329,10 +328,8 @@ text-align: left;
 }
 
 .container21H3 {
-  margin-top: 28px;
-  width: auto;
-  height: auto;
- 
+  margin: 0;
+  margin-bottom: 21px;
   font-family: 'Roboto';
   font-style: normal;
   font-weight: 400;
@@ -340,4 +337,157 @@ text-align: left;
   line-height: 24px;
   /* or 100% */
   color: #000000;
+}
+
+.container3 {
+  margin: auto;
+  width: 80%;
+  height: 468px;
+
+  border-radius: 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+}
+
+.container3h2 {
+  margin-top: 46px;
+  width: 100%;
+  height: 25px;
+
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 25px;
+  /* identical to box height, or 103% */
+
+  text-align: center;
+  text-transform: uppercase;
+
+  color: #000000;
+}
+
+.container3Communiques {
+  width: 100%;
+  height: auto;
+  border: 1 solid black;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 400px);
+  justify-content: center;
+  grid-gap: 10px;
+}
+.container3CommuniquesItem {
+  width: 390px;
+  display: flex;
+  flex-direction: row;
+}
+
+.container3CommuniquesItemText {
+  width:194px;
+  height:100px; 
+  margin-left:15px;
+}
+
+.container3Button {
+  width: 263px;
+  height: 30px;
+  margin-top: 46px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border: 1px solid #343A40;
+  border-radius: 0.8px;
+
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 24px;
+  /* identical to box height, or 160% */
+
+  text-align: center;
+  color: #343A40;
+}
+
+.container4 {
+  background: rgba(0, 0, 0, 0.8);
+  margin-top: 46px;
+  min-height: 453px;
+  border-radius: 0px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.container4Wrap {
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(4, 400px);
+  justify-content: center;
+  grid-gap: 10px;  
+}
+
+.container4Item {
+  width: 360px;
+  height: 300px;
+  background: #87A83D;
+}
+.container4ItemTextTitle {
+  margin: auto;
+  width: 66px;
+  height: 16px;
+  
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+  /* identical to box height, or 114% */
+  
+  text-align: center;
+  
+  color: #ffffff;
+}
+.container4ItemTextParagraphe {
+  margin: auto;
+  width: 200px;
+  height: 58px;
+
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  /* or 120% */
+
+  text-align: center;
+  text-transform: uppercase;
+
+  color: #FFFFFF;
+}
+
+.container4Button {
+  width: 263px;
+  height: 30px;
+  margin-top: 46px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border: 1px solid #343A40;
+  border-radius: 0.8px;
+
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 24px;
+  /* identical to box height, or 160% */
+
+  text-align: center;
+  color: #343A40;
 }
