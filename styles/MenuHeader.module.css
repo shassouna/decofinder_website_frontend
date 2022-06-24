@@ -1,0 +1,68 @@
+.nav {
+    width: 100%;
+    background-color: #fff;
+    transition: all .45s cubic-bezier(.35,.79,.56,1) 25ms;
+}
+.navDiv {
+    max-width: 90%;
+    margin: 0 auto;
+    padding: 0 10px;
+}
+.navGrid {
+    display: grid;
+    height: 55px;
+    grid-template-columns: repeat(12,1fr);
+    grid-template-columns: repeat(auto-fill, 154.25px);
+    grid-gap: 3px;
+    justify-items: center;
+    align-items: center;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    font-size: .8rem;
+    border-top: 1px solid #e6e6e6;
+    border-bottom: 1px solid #e6e6e6;
+}
+.oneSuperUnivers {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.superUniverNameUnderlineFromCenter {
+    position: relative;
+    text-decoration: none;
+    color: #151a1e;
+    color: #212121;
+}
+.oneSuperUnivers:hover {
+    background: #87a83d;
+}
+.gridSuperUnivers {
+    visibility:visible;
+    background: tomato;
+    z-index: 1000;
+    padding: 15px;
+    margin: 0;
+    display: grid;
+    grid-template-columns: 1fr minmax(200px,250px);
+    grid-gap: 3px;
+}
+.superUniversUnivers {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+.gridNombreprodTitreActivite {
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    grid-gap: 3px;
+    padding: 0.8rem 2px;
+}
+.gridUnivers {
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    grid-gap: 3px;
+    padding: 0 2px 15px 2px;
+}
