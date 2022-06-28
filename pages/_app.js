@@ -2,6 +2,7 @@ import '../styles/globals.css'
 import '.././styles/MenuHeader.css'
 import '.././styles/SearchHeader.css'
 import '.././styles/PubHeader.css'
+import '.././styles/FourProducts.css'
 
 import "@fortawesome/fontawesome-svg-core/styles.css"; // import Font Awesome CSS
 import { config } from "@fortawesome/fontawesome-svg-core";

@@ -5,6 +5,7 @@ import Image from 'next/image'
 import MenuHeader from '../../components/menuHeader'
 import SearchHeader from '../../components/searchHeader'
 import PubHeader from '../../components/pubHeader'
+import Nouveautes from '../../components/nouveautes'
 
 const Index = () => {
   return (
@@ -319,6 +320,7 @@ const Index = () => {
           <i class="fa-solid fa-heart"></i>
           </div>
       </div>
+      <Nouveautes/>
     </>
   )
 }
