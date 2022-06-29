@@ -1,0 +1,45 @@
+.container {
+    width: 100%;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.panorama_container_info {
+
+}
+.unProduitGo {
+    cursor: pointer;
+}
+.panorama_title {
+    font-size: 3.5rem;
+    line-height: 100%;
+    font-weight: 400;
+    color: #fff;
+    padding-bottom: 0.5rem;
+    font-family: "-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji"";
+    text-shadow: 3px 4px 4px rgb(0 0 0 / 50%);
+}
+.unProduitGo_panorama {
+    box-sizing: border-box;
+    width: 209px;
+    height: 50px;
+
+    border: 1px solid #FFFFFF;
+    border-radius: 0.8px;
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 36px;
+    /* identical to box height, or 150% */
+    
+    text-align: center;
+    
+    color: #FFFFFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

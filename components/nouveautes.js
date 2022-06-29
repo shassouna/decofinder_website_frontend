@@ -36,6 +36,7 @@ const Nouveautes = () => {
 
     return (
         <div className={styles.container}>
+            <span className={styles.nouveautestitle}>Les Nouveautés</span>
             <div className={styles.nouveauteswrapper}>
             <article className={styles.vignette} onMouseOver={handleSetShowVignetteText} onMouseLeave={handleSetHideVignetteText}>
                 <div className={styles.vignetteTop}>

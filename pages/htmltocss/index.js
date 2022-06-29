@@ -6,6 +6,11 @@ import MenuHeader from '../../components/menuHeader'
 import SearchHeader from '../../components/searchHeader'
 import PubHeader from '../../components/pubHeader'
 import Nouveautes from '../../components/nouveautes'
+import FourProducts from '../../components/fourProducts'
+import Links from '../../components/links'
+import MegaUniversHome from '../../components/megaUniversHome'
+import ImageHome from '../../components/imageHome'
+import Footer from '../../components/footer'
 
 const Index = () => {
   return (
@@ -13,208 +18,11 @@ const Index = () => {
       <PubHeader/>
       <SearchHeader/>
       <MenuHeader/>
+      <ImageHome/>
+      <FourProducts/>
+      <Links/>
+      <MegaUniversHome/>
       <div className={styles.main}>
-         <div className={styles.container}>
-          <div className={styles.productswrapper}>
-            <div className={styles.productswrapperItem}>
-              <div className={styles.productswrapperItemUp}>
-              <Image src="https://s1.decofinder.com/0/0/sel-home/vig/1226/1226881/Assiette-De-Presentation.jpg" 
-                  width={260} height={260} placeholder="none">
-              </Image>
-              </div>
-              <div className={styles.productswrapperItemDown}>
-                <div className={styles.productswrapperItemDownDescription}>
-                  <span className={styles.productswrapperItemDownDescriptionSpanExposant}>MATHON</span>
-                  <br/>
-                  <span className={styles.productswrapperItemDownDescriptionSpanTypeProduct}>Couteau à steak</span>
-                  <br/>
-                  <span className={styles.productswrapperItemDownDescriptionSpanProduct}>Frisette à fromage</span>
-                  <br/> 
-                  <span className={styles.productswrapperItemDownDescriptionSpanDescription}> Ainsi, le piètement qui nécessite de la robustesse est traité en gaulettes (tiges de châtaignier) qui gardent la protection naturelle de l'écorce, tandis qu'à l'inverse, l'assise est traitée en feuillards (tiges de châtaignier refendues) qui procurent la planéité nécessaire au confort ergonomique de la surface d'appui</span>             
-                  <br/>
-                  <span className={styles.productswrapperItemDownDescriptionSpanProduct}>30 £</span>
-                </div>
-              </div>
-            </div>
-            <div className={styles.productswrapperItem}>
-              <div className={styles.productswrapperItemUp}>
-              <Image src="https://s1.decofinder.com/0/0/sel-home/vig/1226/1226881/Assiette-De-Presentation.jpg" 
-                            width={260} height={260} placeholder="none">
-              </Image>
-              </div>
-              <div className={styles.productswrapperItemDown}>
-                <div className={styles.productswrapperItemDownDescription}>
-                  <span className={styles.productswrapperItemDownDescriptionSpanExposant}>MATHON</span>
-                  <br/>
-                  <span className={styles.productswrapperItemDownDescriptionSpanTypeProduct}>Couteau à steak</span>
-                  <br/>
-                  <span className={styles.productswrapperItemDownDescriptionSpanProduct}>Frisette à fromage</span>
-                  <br/> 
-                  <span className={styles.productswrapperItemDownDescriptionSpanDescription}> Ainsi, le piètement qui nécessite de la robustesse est traité en gaulettes (tiges de châtaignier) qui gardent la protection naturelle de l'écorce, tandis qu'à l'inverse, l'assise est traitée en feuillards (tiges de châtaignier refendues) qui procurent la planéité nécessaire au confort ergonomique de la surface d'appui</span>             
-                  <br/>
-                  <span className={styles.productswrapperItemDownDescriptionSpanProduct}>30 £</span>
-                </div>
-              </div>
-            </div>
-            <div className={styles.productswrapperItem}>
-              <div className={styles.productswrapperItemUp}>
-              <Image src="https://s1.decofinder.com/0/0/sel-home/vig/1226/1226881/Assiette-De-Presentation.jpg" 
-                            width={260} height={260} placeholder="none">
-              </Image>
-              </div>
-              <div className={styles.productswrapperItemDown}>
-                <div className={styles.productswrapperItemDownDescription}>
-                  <span className={styles.productswrapperItemDownDescriptionSpanExposant}>MATHON</span>
-                  <br/>
-                  <span className={styles.productswrapperItemDownDescriptionSpanTypeProduct}>Couteau à steak</span>
-                  <br/>
-                  <span className={styles.productswrapperItemDownDescriptionSpanProduct}>Frisette à fromage</span>
-                  <br/> 
-                  <span className={styles.productswrapperItemDownDescriptionSpanDescription}> Ainsi, le piètement qui nécessite de la robustesse est traité en gaulettes (tiges de châtaignier) qui gardent la protection naturelle de l'écorce, tandis qu'à l'inverse, l'assise est traitée en feuillards (tiges de châtaignier refendues) qui procurent la planéité nécessaire au confort ergonomique de la surface d'appui</span>             
-                  <br/>
-                  <span className={styles.productswrapperItemDownDescriptionSpanProduct}>30 £</span>
-                </div>
-              </div>
-            </div>
-            <div className={styles.productswrapperItem}>
-              <div className={styles.productswrapperItemUp}>
-              <Image src="https://s1.decofinder.com/0/0/sel-home/vig/1226/1226881/Assiette-De-Presentation.jpg" 
-                            width={260} height={260} placeholder="none">
-              </Image>
-              </div>
-              <div className={styles.productswrapperItemDown}>
-                <div className={styles.productswrapperItemDownDescription}>
-                  <span className={styles.productswrapperItemDownDescriptionSpanExposant}>MATHON</span>
-                  <br/>
-                  <span className={styles.productswrapperItemDownDescriptionSpanTypeProduct}>Couteau à steak</span>
-                  <br/>
-                  <span className={styles.productswrapperItemDownDescriptionSpanProduct}>Frisette à fromage</span>
-                  <br/> 
-                  <span className={styles.productswrapperItemDownDescriptionSpanDescription}> Ainsi, le piètement qui nécessite de la robustesse est traité en gaulettes (tiges de châtaignier) qui gardent la protection naturelle de l'écorce, tandis qu'à l'inverse, l'assise est traitée en feuillards (tiges de châtaignier refendues) qui procurent la planéité nécessaire au confort ergonomique de la surface d'appui</span>             
-                  <br/>
-                  <span className={styles.productswrapperItemDownDescriptionSpanProduct}>30 £</span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <br/><br/>
-          <div className={styles.linkswrapper}>
-            <div className={styles.linkswrapperItem}>Toutes les sélections du Jury</div>
-            <div className={styles.linkswrapperItem}>Tous les coups de coeur</div>
-            <div className={styles.linkswrapperItem}>Tous les achats en ligne</div>
-            <div className={styles.linkswrapperItem}>Toutes les promotions</div>
-          </div>
-          <br/><br/>
-          <div className={styles.megaunivers}>
-            <div className={styles.megauniversItem}>
-              <h1 className={styles.megauniversH1}>Tous les Mega Univers</h1>
-            </div>
-            <div className={styles.megauniversItem}>
-              <div className={styles.megauniverswrapper}>
-                <div className={styles.megauniverswrapperItem}>
-                  <div className={styles.megauniverswrapperItemUp}>
-                    <Image src="https://s3.decofinder.com/0/0/tgprom/vig/1457/1457253/Accessoires-De-Table.jpg" 
-                                width={128} height={128}  placeholder="none">
-                    </Image>
-                  </div>
-                  <div className={styles.megauniverswrapperItemDown}>
-                    <span className={styles.megauniverswrapperDownTexte}>Arts de la Table</span>
-                  </div>
-                </div>
-                <div className={styles.megauniverswrapperItem}>
-                  <div className={styles.megauniverswrapperItemUp}>
-                    <Image src="https://s3.decofinder.com/0/0/tgprom/vig/1457/1457253/Accessoires-De-Table.jpg" 
-                                width={128} height={128} placeholder="none">
-                    </Image>
-                  </div>
-                  <div className={styles.megauniverswrapperItemDown}>
-                    <span className={styles.megauniverswrapperDownTexte}>Arts de la Table</span>
-                  </div>
-                </div>
-                <div className={styles.megauniverswrapperItem}>
-                  <div className={styles.megauniverswrapperItemUp}>
-                    <Image src="https://s3.decofinder.com/0/0/tgprom/vig/1457/1457253/Accessoires-De-Table.jpg" 
-                                width={128} height={128} placeholder="none">
-                    </Image>
-                  </div>
-                  <div className={styles.megauniverswrapperItemDown}>
-                    <span className={styles.megauniverswrapperDownTexte}>Arts de la Table</span>
-                  </div>
-                </div>
-                <div className={styles.megauniverswrapperItem}>
-                  <div className={styles.megauniverswrapperItemUp}>
-                    <Image src="https://s3.decofinder.com/0/0/tgprom/vig/1457/1457253/Accessoires-De-Table.jpg" 
-                                width={128} height={128} placeholder="none">
-                    </Image>
-                  </div>
-                  <div className={styles.megauniverswrapperItemDown}>
-                    <span className={styles.megauniverswrapperDownTexte}>Arts de la Table</span>
-                  </div>
-                </div>
-                <div className={styles.megauniverswrapperItem}>
-                  <div className={styles.megauniverswrapperItemUp}>
-                    <Image src="https://s3.decofinder.com/0/0/tgprom/vig/1457/1457253/Accessoires-De-Table.jpg" 
-                                width={128} height={128} placeholder="none">
-                    </Image>
-                  </div>
-                  <div className={styles.megauniverswrapperItemDown}>
-                    <span className={styles.megauniverswrapperDownTexte}>Arts de la Table</span>
-                  </div>
-                </div>
-                <div className={styles.megauniverswrapperItem}>
-                  <div className={styles.megauniverswrapperItemUp}>
-                    <Image src="https://s3.decofinder.com/0/0/tgprom/vig/1457/1457253/Accessoires-De-Table.jpg" 
-                                width={128} height={128} placeholder="none">
-                    </Image>
-                  </div>
-                  <div className={styles.megauniverswrapperItemDown}>
-                    <span className={styles.megauniverswrapperDownTexte}>Arts de la Table</span>
-                  </div>
-                </div>
-                <div className={styles.megauniverswrapperItem}>
-                  <div className={styles.megauniverswrapperItemUp}>
-                    <Image src="https://s3.decofinder.com/0/0/tgprom/vig/1457/1457253/Accessoires-De-Table.jpg" 
-                                width={128} height={128} placeholder="none">
-                    </Image>
-                  </div>
-                  <div className={styles.megauniverswrapperItemDown}>
-                    <span className={styles.megauniverswrapperDownTexte}>Arts de la Table</span>
-                  </div>
-                </div>
-                <div className={styles.megauniverswrapperItem}>
-                  <div className={styles.megauniverswrapperItemUp}>
-                    <Image src="https://s3.decofinder.com/0/0/tgprom/vig/1457/1457253/Accessoires-De-Table.jpg" 
-                                width={128} height={128} placeholder="none">
-                    </Image>
-                  </div>
-                  <div className={styles.megauniverswrapperItemDown}>
-                    <span className={styles.megauniverswrapperDownTexte}>Arts de la Table</span>
-                  </div>
-                </div>
-                <div className={styles.megauniverswrapperItem}>
-                  <div className={styles.megauniverswrapperItemUp}>
-                    <Image src="https://s3.decofinder.com/0/0/tgprom/vig/1457/1457253/Accessoires-De-Table.jpg" 
-                                width={128} height={128} placeholder="none">
-                    </Image>
-                  </div>
-                  <div className={styles.megauniverswrapperItemDown}>
-                    <span className={styles.megauniverswrapperDownTexte}>Arts de la Table</span>
-                  </div>
-                </div>
-                <div className={styles.megauniverswrapperItem}>
-                  <div className={styles.megauniverswrapperItemUp}>
-                    <Image src="https://s3.decofinder.com/0/0/tgprom/vig/1457/1457253/Accessoires-De-Table.jpg" 
-                                width={128} height={128} placeholder="none">
-                    </Image>
-                  </div>
-                  <div className={styles.megauniverswrapperItemDown}>
-                    <span className={styles.megauniverswrapperDownTexte}>Arts de la Table</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
         <div className={styles.pub}>
           <Image src="https://s1.decofinder.com/0/0/bdpBanner/_bandeaux/88/88771/.jpg" 
             width={1168} height={217} placeholder="none" alt={''}>
@@ -321,6 +129,7 @@ const Index = () => {
           </div>
       </div>
       <Nouveautes/>
+      <Footer/>
     </>
   )
 }
